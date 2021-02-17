@@ -1,0 +1,168 @@
+<div class="nav_area">
+    <div class="container" style="background:unset;overflow: unset;">
+        <!-- <div class="logo_nav">
+            <img src="assets/images/logo/logo.png?v=1.4" alt="">
+        </div> -->
+        <div class="topnav" id="myTopnav">
+
+            <ng-container *ngFor="let menu of menus; index as i; first as isFirst;let l = count">
+
+                <div class="link_nav cal_{{l+3}}" *ngIf="i==0">
+                    <a [routerLinkActive]="['active-menu']" [routerLinkActiveOptions]="{exact:true}" routerLink="/home" class=" links active ">
+                        <div class="image_nav">
+                            <img class="image_icon" src="/assets/images/icon/icon-1.png" alt="">
+                        </div>
+                        หน้าแรก
+                    </a>
+                </div>
+                <ng-container *ngIf="i==2">
+                    <div class="link_nav cal_{{l+3}}">
+                        <div class="logo_nav">
+                            <img src="assets/images/logo/logo.png?v=1.4" alt="">
+                        </div>
+                    </div>
+
+                </ng-container>
+
+                <div class="link_nav cal_{{l+3}}">
+                    <ng-container *ngIf="menu.menu_route=='contact'">
+                        <a target="_blank" href="https://line.me/ti/p/%40787ismuq" class=" links active ">
+                            <ng-container *ngIf="menu.menu_route=='contact'">
+                                <div class="image_nav">
+                                    <img class="image_icon" src="/assets/images/icon/icon-6.png" alt="">
+                                </div>
+                            </ng-container>
+                            {{menu.menu_name}}
+                        </a>
+                    </ng-container>
+                    <ng-container *ngIf="menu.menu_route=='register'">
+                        <a href="https://wallet-imiwin.com/register?token=70657dvos548e3004pa81809bvows6b49dcc5cf9" class=" links active ">
+                            <ng-container *ngIf="menu.menu_route=='register'">
+                                <div class="image_nav">
+                                    <img class="image_icon" src="/assets/images/icon/icon-2.png" alt="">
+                                </div>
+                            </ng-container>
+                            {{menu.menu_name}}
+                        </a>
+                    </ng-container>
+                    <ng-container *ngIf="menu.menu_route=='deposit'">
+                        <a href="https://wallet-imiwin.com/deposit?token=70657dvos548e3004pa81809bvows6b49dcc5cf9" class=" links active ">
+                            <ng-container *ngIf="menu.menu_route=='deposit'">
+                                <div class="image_nav">
+                                    <img class="image_icon" src="/assets/images/icon/icon-3.png" alt="">
+                                </div>
+                            </ng-container>
+                            {{menu.menu_name}}
+                        </a>
+                    </ng-container>
+                    <ng-container *ngIf="menu.menu_route=='withdraw'">
+                        <a href="https://wallet-imiwin.com/withdrawal?token=70657dvos548e3004pa81809bvows6b49dcc5cf9" class=" links active ">
+                            <ng-container *ngIf="menu.menu_route=='withdraw'">
+                                <div class="image_nav">
+                                    <img class="image_icon" src="/assets/images/icon/icon-3.png" alt="">
+                                </div>
+                            </ng-container>
+                            {{menu.menu_name}}
+                        </a>
+                    </ng-container>
+                    <!-- <ng-container *ngIf="menu.menu_route!='contact'">
+                        <a [routerLinkActiveOptions]="{exact:true}" [routerLinkActive]="['active-menu']" routerLink="/page/{{menu.menu_route}}" class=" links active ">
+                            <ng-container *ngIf="menu.menu_route=='contact'">
+                                <div class="image_nav">
+                                    <img class="image_icon" src="/assets/images/icon/icon-6.png" alt="">
+                                </div>
+                            </ng-container>
+                           
+                           
+                           
+
+                            {{menu.menu_name}}
+                        </a>
+                    </ng-container> -->
+
+
+                </div>
+                <div class="link_nav cal_{{l+3}}" *ngIf="i==2">
+                    <a [routerLinkActiveOptions]="{exact:true}" [routerLinkActive]="['active-menu']" routerLink="/promotion" class=" links active ">
+                        <div class="image_nav">
+                            <img class="image_icon" src="/assets/images/icon/icon-4.png" alt="">
+                        </div>
+                        โปรโมชั่น
+                    </a>
+                </div>
+            </ng-container>
+
+
+
+        </div>
+    </div>
+</div>
+
+<div class="topnav_mobile" id="myTopnav">
+    <div class="m_logo">
+        <img src="/assets/images/logo/logo.png" alt="">
+    </div>
+    <ng-container *ngFor="let menu of menus; index as i; first as isFirst;let l = count">
+        <a [routerLinkActive]="['active-menu']" *ngIf="i==0" [routerLinkActiveOptions]="{exact:true}" routerLink="/home" class="btn_mobile btn  links active cal_{{l+2}}">หน้าหลัก</a>
+
+
+        <ng-container *ngIf="menu.menu_route=='contact'">
+            <a target="_blank" href="https://line.me/ti/p/%40787ismuq" class="btn_mobile btn  width_{{i+1}} links active cal_{{l+2}}">
+                {{menu.menu_name}}
+            </a>
+        </ng-container>
+        <ng-container *ngIf="menu.menu_route=='register'">
+            <a href="https://wallet-imiwin.com/register?token=70657dvos548e3004pa81809bvows6b49dcc5cf9" class="btn_mobile btn  width_{{i+1}} links active cal_{{l+2}}">
+                {{menu.menu_name}}
+            </a>
+        </ng-container>
+        <ng-container *ngIf="menu.menu_route=='deposit'">
+            <a href="https://wallet-imiwin.com/deposit?token=70657dvos548e3004pa81809bvows6b49dcc5cf9" class="btn_mobile btn  width_{{i+1}} links active cal_{{l+2}}">
+                {{menu.menu_name}}
+            </a>
+        </ng-container>
+        <ng-container *ngIf="menu.menu_route=='withdraw'">
+            <a href="https://wallet-imiwin.com/withdrawal?token=70657dvos548e3004pa81809bvows6b49dcc5cf9" class="btn_mobile btn  width_{{i+1}} links active cal_{{l+2}}">
+                {{menu.menu_name}}
+            </a>
+        </ng-container>
+        <!-- 
+        <ng-container *ngIf="menu.menu_route!='contact'">
+            <a [routerLinkActive]="['active-menu']" [routerLinkActiveOptions]="{exact:true}" routerLink="/page/{{menu.menu_route}}" class="btn_mobile btn  width_{{i+1}} links active cal_{{l+2}}">{{menu.menu_name}}</a>
+        </ng-container> -->
+
+
+        <a [routerLinkActive]="['active-menu']" *ngIf="i==2" [routerLinkActiveOptions]="{exact:true}" routerLink="/promotion" class="btn_mobile btn  links cal_{{l+2}}">โปรโมชั่น</a>
+    </ng-container>
+</div>
+
+
+<!-- <div class="topnav_mobile" id="myTopnav">
+    <nav class="navbar navbar-expand-lg ">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="icon_menu_mobile">
+            <span class="navbar-toggler-icon">   
+            </span>
+        </button>
+        <div class="logo_nav_m">
+            <img src="assets/images/logo/logo.png?v=1.4" alt="">
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto" style="text-align: left;">
+                <ng-container *ngFor="let menu of menus; index as i; first as isFirst;let l = count">
+
+                    <li class="nav-item  nav-menu-tab" *ngIf="i==0">
+                        <a style="color: black;" [routerLinkActive]="['active-menu']" [routerLinkActiveOptions]="{exact:true}" routerLink="/home">หน้าหลัก</a>
+                    </li>
+                    <li class="nav-item  nav-menu-tab">
+                        <a style="color: black;" [routerLinkActive]="['active-menu']" [routerLinkActiveOptions]="{exact:true}" routerLink="/page/{{menu.menu_route}}">{{menu.menu_name}}</a>
+                    </li>
+                    <li class="nav-item  nav-menu-tab" *ngIf="i==2">
+                        <a style="color: black;" [routerLinkActive]="['active-menu']" [routerLinkActiveOptions]="{exact:true}" routerLink="/promotion">โปรโมชั่น</a>
+                    </li>
+
+                </ng-container>
+            </ul>
+        </div>
+    </nav>
+</div> -->

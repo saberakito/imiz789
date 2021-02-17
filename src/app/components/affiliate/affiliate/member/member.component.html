@@ -1,0 +1,28 @@
+<app-menu></app-menu>
+
+<div class="container padding20">
+    <div class="income_area">
+        <div class="label_title">
+            สมาชิก
+        </div>
+        <div class="content_area_income">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">วันที่สมัคร</th>
+                        <th scope="col">ยูสเซอร์เนม</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let member of listMember; index as i; first as isFirst;let l = count">
+                        <tr>
+                            <th scope="row">{{member.mem_create}}</th>
+                            <td>{{member.mem_code}}</td>
+                        </tr>
+                    </ng-container>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
